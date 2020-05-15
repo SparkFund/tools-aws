@@ -1,0 +1,23 @@
+[{true
+  {"ClojureVersion" "1.10.0442"}}
+ {:account
+  {"prod"
+   {:id "123"
+    :name "prod"}
+   "sandbox"
+   {:id "456"
+    :name "sandbox"}}}
+ {:env
+  {"sandcastle"
+   {"Env" "sandcastle"
+    "EC2InstanceClass" "t3.small"
+    "SlackAlarmChannel" "#dev-null"}
+   "staging"
+   {"Env" "staging"
+    "EC2InstanceClass" "t3.medium"
+    "SlackAlarmChannel" "#dev-staging-alerts"}
+   "prod"
+   {"Env" "prod"
+    "EC2InstanceClass" "t3.large"
+    "SlackAlarmChannel" "#dev-prod-alerts"}}}
+ ]

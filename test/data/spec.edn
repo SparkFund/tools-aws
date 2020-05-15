@@ -1,0 +1,29 @@
+{:structure
+ {:account #{"sandbox" "prod"}
+  :env {"sandcastle" {:account "sandbox"}
+        "qa" {:account "sandbox"}
+        "prod" {:account "prod"}}
+  :microservice #{"aaa" "bbb"}
+  :db #{"db"}}
+
+ :order
+ [:account :region :env :microservice]
+
+ :stacks
+ [[:template "templates/account.edn"
+   :once-per [:account]
+   :name ["account"]]
+
+  [:template "templates/environment.edn"
+   :once-per [:account :env]
+   :name ["environment"]]
+
+  [:template "templates/database.edn"
+   :once-per [:account :env :db]
+   :name [:env :db]]
+
+  [:template "templates/microservice.edn"
+   :once-per [:account :env :microservice]
+   :name [:microservice :env]
+   :params {"Name" :microservice}]
+  ]}

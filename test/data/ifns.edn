@@ -1,0 +1,3 @@
+{iam-policy sparkfund.aws.cfn.ifns/iam-policy
+ assume-roles-policy sparkfund.aws.cfn.ifns/assume-roles-policy
+ }
