@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/clojure:tools-deps-1.10.1.502
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - maven-deps-{{ .Branch }}-{{ checksum "deps.edn" }}
+            - maven-deps-{{ .Branch }}
+            - maven-deps-master-{{ checksum "deps.edn" }}
+            - maven-deps-master
+            - maven-deps
+      - run:
+          name: Install Dependencies
+          command: clojure -e ""
+      - run:
+          name: Test
+          command: clojure -A:test --plugin kaocha.plugin/junit-xml --junit-xml-file test-results/junit.xml
+      - store_test_results:
+          path: test-results
+      - save_cache:
+          key: maven-deps-{{ .Branch }}-{{ checksum "deps.edn" }}
+          paths:
+            - "~/.cpcache"
+            - "~/.m2"
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
