@@ -12,7 +12,7 @@
     (is (= spec-file (:spec-file model)))
     (is (= constants-file (:constants-file model)))
     (is (= ifns-file (:ifns-file model)))
-    (is (= [:account :region :env :microservice] (get-in model [:order])))
+    (is (= [:account :env :microservice] (get-in model [:order])))
     (is (= #{"db"} (get-in model [:structure :db])))
     (is (= {"ClojureVersion" "1.10.0442"} (get-in model [:constants true])))
     (is (= "t3.small" (get-in model [:constants :env "sandcastle" "EC2InstanceClass"])))

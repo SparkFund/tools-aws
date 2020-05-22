@@ -12,7 +12,7 @@
    {"Env" "sandcastle"
     "EC2InstanceClass" "t3.small"
     "SlackAlarmChannel" "#dev-null"}
-   "staging"
+   "qa"
    {"Env" "staging"
     "EC2InstanceClass" "t3.medium"
     "SlackAlarmChannel" "#dev-staging-alerts"}

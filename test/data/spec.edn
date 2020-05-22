@@ -7,7 +7,7 @@
   :db #{"db"}}
 
  :order
- [:account :region :env :microservice]
+ [:account :env :microservice]
 
  :stacks
  [[:template "templates/account.edn"
