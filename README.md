@@ -118,7 +118,7 @@ any command-line scripts that need to update CloudFormation stacks.
 
 For example:
 
-```
+```clj
 (let [filters {:name "aaa-sandcastle"}
       stacks (model/filter-stacks (:stacks model) filters)]
   (println "Found" (count stacks) "matching" (if (= 1 (count stacks)) "stack" "stacks"))
@@ -131,7 +131,7 @@ For example:
       (cli/exit! 0)))
 ```
 
-This expression outputs the following interactive dialogue:
+This expression might output the following interactive dialogue:
 
 ```
 Found 1 matching stack
