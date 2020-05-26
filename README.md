@@ -84,7 +84,7 @@ Example `constants.edn` file:
 ```
 
 The `[:account :id]` and `[:account :name]` paths are optional to
-provide shorthands for ifns, where `:id` is the actuall Account ID and
+provide shorthands for ifns, where `:id` is the actual Account ID and
 `:name` is a consistent string shorthand for the account.
 
 Example `ifns.edn` file:
