@@ -1,0 +1,2 @@
+{"Resource" {:Test1 (ref "Test2")
+             "Test3" (iam-policy "Name" ["Statement"])}}

@@ -57,6 +57,39 @@
            "Value" v})
         m))
 
+(def built-in
+  "Shortcuts for the various CloudFormation intrinsic functions
+  https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html"
+  {'ref           ref
+   'attr          attr
+   'format        format
+   'import-value  import-value
+   'mapping-value mapping-value
+   'split         split
+   'join          join
+   'str           str
+   'nth           nth
+   'first         first
+   'second        second
+   'base64-encode base64-encode
+   'json-encode   json-encode
+   'edn-encode    edn-encode
+   'and           and
+   'or            or
+   '=             =
+   'not           not
+   'not=          not=
+   'if            if?
+   'when          when
+   'when-not      when-not
+   'tags          tags
+   })
+
+
+;;;; the following are not added by default, but you can still
+;;;; reference them in an ifns.edn file if you want them
+
+
 (defn iam-policy
   "Cuts out some of the boilerplate when making an IAM policy."
   [policy-name statements]

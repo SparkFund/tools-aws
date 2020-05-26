@@ -1,35 +1,7 @@
 (ns sparkfund.aws.cfn.templating
   (:require [clojure.walk :as walk]
-            [sparkfund.aws.cfn.ifns :as t]
+            [sparkfund.aws.cfn.ifns :as ifns]
             [sparkfund.aws.cfn.model :as model]))
-
-(def unbound-expansions
-  "Shortcuts for the various CloudFormation intrinsic functions
-  https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html"
-  {'ref           t/ref
-   'attr          t/attr
-   'format        t/format
-   'import-value  t/import-value
-   'mapping-value t/mapping-value
-   'split         t/split
-   'join          t/join
-   'str           t/str
-   'nth           t/nth
-   'first         t/first
-   'second        t/second
-   'base64-encode t/base64-encode
-   'json-encode   t/json-encode
-   'edn-encode    t/edn-encode
-   'and           t/and
-   'or            t/or
-   '=             t/=
-   'not           t/not
-   'not=          t/not=
-   'if            t/if?
-   'when          t/when
-   'when-not      t/when-not
-   'tags          t/tags
-   })
 
 (defn build-mappings
   "Builds mappings from the constants, including an Accounts key with
@@ -72,7 +44,7 @@
   [ifns mappings]
   (merge {'account-id (partial account-id mappings)
           'role-arn (partial role-arn mappings)}
-         unbound-expansions
+         ifns/built-in
          ifns))
 
 (defn expand-one
