@@ -1,4 +1,6 @@
 ## tools-aws
+[![Clojars Project](https://img.shields.io/clojars/v/sparkfund/tools-aws.svg)](https://clojars.org/sparkfund/tools-aws)
+![CircleCI](https://circleci.com/gh/SparkFund/tools-aws.svg?style=svg)
 
 Using infrastructure-as-data to demystify CloudFormation operations.
 
@@ -9,6 +11,9 @@ does CloudFormation operations.
 Although the source code for this library is now open source, it is
 offered as a demonstration, not as a promise of continued development
 or support.
+
+Click the Clojars badge above to see available versions and to get
+Lein/Boot/deps.edn information.
 
 ### Usage
 
